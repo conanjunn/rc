@@ -14,6 +14,9 @@ set mousemodel=popup
 " 显示相关
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
+"set background=dark
+"colorscheme solarized
+"let g:solarized_termcolors=256
 set cul "高亮光标所在行
 "set cuc
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
@@ -138,3 +141,51 @@ filetype plugin indent on
 "打开文件类型检测, 加了这句才可以用智能补全
 set completeopt=longest,menu
 
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+Plugin 'mattn/emmet-vim'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,scss,less,sass EmmetInstall " Enable just for html/css
+let g:user_emmet_leader_key='<C-Z>' " To remap the default <C-Y> leader
+
+Plugin 'kien/ctrlp.vim'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
+map <c-f> :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <c-j> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-j> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css,scss,less,sass noremap <buffer> <c-j> :call CSSBeautify()<cr>
+
+autocmd FileType javascript vnoremap <buffer>  <c-k> :call RangeJsBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-k> :call RangeHtmlBeautify()<cr>
+autocmd FileType css,scss,less,sass vnoremap <buffer> <c-k> :call RangeCSSBeautify()<cr>
