@@ -74,8 +74,14 @@ set viminfo+=!
 set iskeyword+=_,$,@,%,#,-
 " 字符间插入的像素行数目
 
-
-
+" 插入模式时改变光标形状
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -175,12 +181,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
-map <c-f> :call JsBeautify()<cr>
-" or
 autocmd FileType javascript noremap <buffer>  <c-j> :call JsBeautify()<cr>
-" for html
 autocmd FileType html noremap <buffer> <c-j> :call HtmlBeautify()<cr>
-" for css or scss
 autocmd FileType css,scss,less,sass noremap <buffer> <c-j> :call CSSBeautify()<cr>
 
 autocmd FileType javascript vnoremap <buffer>  <c-k> :call RangeJsBeautify()<cr>
