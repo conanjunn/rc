@@ -1,5 +1,5 @@
-set sw=4
-set ts=4
+set sw=2
+set ts=2
 set et
 set smarttab
 set smartindent
@@ -42,10 +42,10 @@ endif
 set autoindent
 set cindent
 " Tab键的宽度
-set tabstop=4
-" 统一缩进为4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+" 统一缩进为2
+set softtabstop=2
+set shiftwidth=2
 " 不要用空格代替制表符
 set expandtab
 " 在行和段开始处使用制表符
