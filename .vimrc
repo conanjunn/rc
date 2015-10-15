@@ -74,6 +74,15 @@ set viminfo+=!
 set iskeyword+=_,$,@,%,#,-
 " 字符间插入的像素行数目
 
+" 显示tab和空格
+set list
+" 设置tab和空格样式
+set lcs=tab:\|\ ,nbsp:%,trail:-
+" 设定行首tab为灰色
+highlight LeaderTab guifg=#666666
+" 匹配行首tab
+match LeaderTab /^\t/
+
 " 插入模式时改变光标形状
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -97,7 +106,9 @@ set completeopt=preview,menu
 "共享剪贴板
 "set clipboard+=unnamed
 "自动保存
-set autowrite
+"set autowrite
+"切换buffer时隐藏当前
+set hidden
 "set cursorline              " 突出显示当前行
 set magic                   " 设置魔术
 set guioptions-=T           " 隐藏工具栏
@@ -188,3 +199,15 @@ autocmd FileType css,scss,less,sass noremap <buffer> <c-j> :call CSSBeautify()<c
 autocmd FileType javascript vnoremap <buffer>  <c-k> :call RangeJsBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-k> :call RangeHtmlBeautify()<cr>
 autocmd FileType css,scss,less,sass vnoremap <buffer> <c-k> :call RangeCSSBeautify()<cr>
+
+
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'scrooloose/nerdtree'
+map <C-n> :NERDTreeToggle<CR>
+
+
+Plugin 'fholgado/minibufexpl.vim'
+map <C-h> :bp<CR>
+map <C-l> :bn<CR>
+
