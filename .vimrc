@@ -5,6 +5,9 @@ syntax on
 "set background=dark
 "colorscheme solarized
 "let g:solarized_termcolors=256
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 set cul "高亮光标所在行
 "set cuc
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
@@ -30,10 +33,10 @@ endif
 set autoindent
 set cindent
 " Tab键的宽度
-set tabstop=4
-" 统一缩进为4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+" 统一缩进为2
+set softtabstop=2
+set shiftwidth=2
 " 不要用空格代替制表符
 set expandtab
 " 在行和段开始处使用制表符
@@ -70,6 +73,10 @@ set lcs=tab:\|\ ,nbsp:%,trail:-
 highlight LeaderTab guifg=#666666
 " 匹配行首tab
 match LeaderTab /^\t/
+
+" 一行超过100的字符背景为红色
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%101v.\+/
 
 " 插入模式时改变光标形状
 if exists('$TMUX')
@@ -194,10 +201,19 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 
-Plugin 'bling/vim-bufferline'
-map <C-h> :bp<CR>
-map <C-l> :bn<CR>
-
 Plugin 'digitaltoad/vim-jade'
 Plugin 'bling/vim-airline'
 "let g:airline_powerline_fonts = 1
+
+Plugin 'pangloss/vim-javascript'
+set foldmethod=syntax
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+
+Plugin 'bufexplorer.zip'
+Plugin 'Yggdroot/indentLine'
+
+Plugin 'groenewege/vim-less'
+"nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
