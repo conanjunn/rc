@@ -201,7 +201,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
 " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
 " 是否显示隐藏文件
 let NERDTreeShowHidden=1
 " 在终端启动vim时，共享NERDTree
