@@ -200,6 +200,18 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'scrooloose/nerdtree'
 map <C-n> :NERDTreeToggle<CR>
+" 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+autocmd VimEnter * NERDTree
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+" 在终端启动vim时，共享NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" 显示书签列表
+let NERDTreeShowBookmarks=1
+" 在nerdtree中定位文件
+noremap <Leader>sf <Esc>:NERDTreeFind<CR>
 
 Plugin 'digitaltoad/vim-jade'
 Plugin 'bling/vim-airline'
