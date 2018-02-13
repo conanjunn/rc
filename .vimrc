@@ -82,6 +82,8 @@ match OverLength /\%101v.\+/
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  " 解决只有代码处有背景色的问题
+  set term=screen-256color
 else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -229,3 +231,6 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'groenewege/vim-less'
 "nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+
+Plugin 'fatih/vim-go'
+
