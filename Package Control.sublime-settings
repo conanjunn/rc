@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"DocBlockr",
+		"Emmet",
+		"Handlebars",
+		"JsFormat",
+		"LESS",
+		"Package Control",
+		"Seti_UI",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"Theme - Nexus",
+		"TrailingSpaces",
+		"Vue Syntax Highlight",
+		"Vuejs Snippets"
+	]
+}

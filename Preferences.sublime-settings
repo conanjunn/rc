@@ -1,0 +1,56 @@
+{
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"node_modules/**/*"
+	],
+	"caret_extra_bottom": 3,
+	"caret_extra_top": 3,
+	"caret_extra_width": 2,
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"default_line_ending": "unix",
+	"draw_white_space": false,
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Monaco",
+	"font_size": 11,
+	"highlight_line": true,
+	"hot_exit": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_to_bracket": true,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"margin": 4,
+	"open_files_in_new_window": false,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		80,
+		120
+	],
+	"scroll_past_end": false,
+	"show_encoding": true,
+	"show_full_path": true,
+	"soda_classic_tabs": true,
+	"tab_size": 2,
+	"theme": "Nexus.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"wide_caret": true,
+	"word_wrap": true
+}
