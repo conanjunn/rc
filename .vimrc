@@ -234,3 +234,16 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 Plugin 'fatih/vim-go'
 
+Plugin 'vim-syntastic/syntastic' 
+" syntastic -------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+nnoremap <silent> <C-x> :lclose<CR>
+nnoremap <silent> <C-c> :SyntasticCheck<CR>
+" syntastic -------------------------------
